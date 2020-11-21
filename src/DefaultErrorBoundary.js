@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import propType from 'prop-types'
 
 class DefaultErrorBoundary extends PureComponent {
   state = {
@@ -7,6 +8,10 @@ class DefaultErrorBoundary extends PureComponent {
 
   static getDerivedStateFromError() {
     return { isError: true }
+  }
+
+  static propType = {
+    children: propType.node.isRequired,
   }
 
   render() {
